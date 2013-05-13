@@ -1,0 +1,116 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot');
+	src:url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.woff') format('woff'),
+		url('../fonts/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[data-icon]:before {
+	content: attr(data-icon);
+	speak: none;
+	font-family: 'icomoon';
+	font-size: 26px;
+	text-transform: none;
+	font-variant: normal;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+	color: #FFF;
+}
+
+.del {
+	float: left;
+	display: block;
+	width: 8%;
+	height: 30px;
+	margin: 1%;
+	background: #F45;
+	font-size: 36px;
+	line-height: 26px;
+	text-align: center;
+	color: #FCFCFC;
+	cursor: pointer;
+}
+
+.hide { visibility: hidden; }
+
+input[type=number] {
+	width: 30%;
+	float: left;
+	position: relative;
+	border: 1px solid $baseBorderColor;
+	margin: 1%;
+	&:focus {
+		border: 1px solid $themeColor;
+		box-shadow: 0 0 7px rgba($baseLinkColor, .5);
+	}
+}
+
+select {
+	width: 18%;
+	float: left;
+	margin: 1%;
+}
+
+input[type="number"],
+select {
+	height: 30px;
+	padding: 0 0.2em;
+	@include box-sizing;
+	font-family: $fontFamily;
+}
+
+input[type="number"]:focus,
+select:focus {
+	outline: none;
+}
+
+button {
+	height: 60px;
+	@include box-sizing;
+	border: 0;
+	font-family: inherit;
+	font-size: 16px;
+}
+
+a {
+	display: block;
+	@include box-sizing;
+	padding: 0.5em;
+	border-bottom: 1px solid #CCC;
+	text-decoration: none;
+	color: $baseLinkColor;
+}
+
+#btn-new-item,
+#btn-calc,
+#btn-back {
+	height: 60px;
+	background: $themeColor;
+	text-align: center;
+	color: #FFF;
+}
+
+#btn-back {
+	width: 100%;
+}
+
+#btn-new-item,
+#btn-calc {
+	float: left;
+	width: 50%;
+}
+
+.clearfix {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}

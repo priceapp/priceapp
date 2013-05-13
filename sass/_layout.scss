@@ -1,0 +1,122 @@
+body {
+	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
+	background: $bgBody;
+	font-family: $fontFamily;
+	color: $baseFontColor;
+}
+
+header {
+	width: 100%;
+	height: 60px;
+	padding: 0 1%;
+	@include box-sizing;
+	background: $themeColor;
+	line-height: 60px;
+	color: #FFFFFF;
+	.icon-header {
+		float: left;
+		margin-right: 5px;
+	}
+}
+
+/* SECTIONS */
+section {
+	position: absolute;
+	width: 100%;
+	height: calc(100% - 120px);
+	padding-bottom: 60px;
+	overflow-y: scroll;
+	background: #FFF;
+}
+
+//LOAD
+#load {
+	background: url(../img/load-screen.jpg);
+	background-size: 100% 100%;
+}
+
+.load-hide {
+	z-index: -1;
+	width: 0;
+}
+
+//SELECT
+.mask {
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50%;
+	padding-right: 10px;
+	@include box-sizing();
+	text-align: right;
+	color: #FFF;
+	select {
+		top: 0;
+		left: 0;
+		position: absolute;
+		z-index: 20;
+		width: 100%;
+		height: 50px;
+		border-radius: 0;
+		margin: 0;
+		opacity: 0;
+	}
+}
+
+//HIDE SECTION
+.section-hide {
+	display: none;
+}
+
+// BUTTONS
+.container-button {
+	z-index: 2;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	@include transition();
+}
+
+#btn-result { display: none; }
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+form {
+	margin-top: 1em;
+	@include box-sizing;
+}
+
+// RESULTS
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+thead { background: #F0F0F0; }
+
+th,
+td {
+	padding: .7em .1em;
+	font-weight: normal;
+	text-align: left;
+	vertical-align: middle;
+}
+
+td img { vertical-align: middle; }
+
+.this-price {
+	background: $themeColor;
+	color: #F0F0F0;
+	td {
+		padding: .3em .1em;
+	}
+}

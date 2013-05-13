@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<title>PriceApp</title>
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<!-- load -->
+	<section id="load"></section>
+	<!-- /load -->
+
+	<!-- home -->
+	<section id="home" class="home">
+		<header>
+			<span aria-hidden="true" data-icon="&#xe000;" class="icon-header"></span>
+			Novo Item
+			<div class="mask item-menu">
+				<select name="tipo" id="tipo" class="teste">
+					<option value="0">Peso</option>
+					<option value="1">Volume</option>
+					<option value="2">Comprimento</option>
+				</select>
+				<span>Medida</span>
+			</div>
+		</header>
+		<form name="calc">
+			<div class="clearfix">
+				<div style="float: left; width: 8%; margin: 1%;"></div>
+				<div style="float: left; width: 30%; margin: 1%;">Preço</div>
+				<div style="float: left; width: 30%; margin: 1%;">Quantidade</div>
+				<div style="float: left; width: 18%; margin: 1%;">Medida</div>
+			</div>
+			<ul id="form-items">
+				<li data-item="1" class="line-item clearfix">
+					<span class="del hide">x</span>
+					<input type="number" name="price-1" id="price-1" class="price" required>
+					<input type="number" name="qtd-1" qtd="qtd-2"  class="qtd" required>
+					<select name="tipo-1" id="tipo-1" class="type" required>
+						<option value="1">g</option>
+						<option value="1000">KG</option>
+					</select>
+				</li>
+				<li data-item="2" class="line-item clearfix">
+					<span class="del hide">x</span>
+					<input type="number" name="price-2" id="price-2" class="price" required>
+					<input type="number" name="qtd-2" id="qtd-2" class="qtd" step="0.1" required>
+					<select name="tipo-2" id="tipo-2" class="type" required>
+						<option value="1">g</option>
+						<option value="1000">KG</option>
+					</select>
+				</li>
+			</ul>
+		</form>
+	</section>
+	<!-- /home -->
+
+	<!-- view -->
+	<section id="view" class="section-hide view">
+		<header>
+			<span aria-hidden="true" data-icon="&#xe003;" class="icon-header"></span>
+			Items
+		</header>
+		<table>
+			<thead>
+				<tr>
+					<th></th>
+					<th>Preço</th>
+					<th>Qtd</th>
+					<th>Valor</th>
+				</tr>
+			</thead>
+			<tbody id="list-item"></tbody>
+		</table>
+	</section>
+	<!-- /view -->
+
+	<!-- botoes -->
+	<div class="container-button" id="btn-home">
+		<button id="btn-new-item">Novo item</button>
+		<button id="btn-calc">Calcular</button>
+	</div>
+	<div class="container-button" id="btn-result">
+		<button id="btn-back">Voltar</button>
+	</div>
+	<!-- /botoes -->
+
+	<!-- templates -->
+	<script id="result" type="text/x-handlebars-template">
+		{{#each items}}
+		<tr {{#if win}}class="this-price"{{/if}}>
+			<td>{{#if win}} <img src="img/icon02_36.png" height="37" width="36" alt=""> {{/if}}</td>
+			<td>R$ {{ price }}</td>
+			<td>{{ qtd }} {{ um }}</td>
+			<td>R$ {{ printValue }}</td>
+		</tr>
+		{{/each}}
+	</script>
+	<script id="items" type="text/x-handlebars-template">
+		{{#each types}}
+		<option value="{{ n }}">{{ text }}</option>
+		{{/each}}
+	</script>
+	<script id="new-line" type="text/x-handlebars-template">
+		<li data-item="{{ item }}" class="line-item clearfix">
+			<span class="del">x</span>
+			<input type="number" name="price-{{ item }}" id="price-{{ item }}" class="input-item price" required="required">
+			<input type="number" name="qtd-{{ item }}" qtd="qtd-{{ item }}"  class="input-item qtd" required="required">
+			<select name="tipo-{{ item }}" id="tipo-{{ item }}" class="input-item type" required>
+			{{#each i}}
+				<option value="{{ n }}">{{ text }}</option>
+			{{/each}}
+			</select>
+		</li>
+	</script>
+	<!-- /templates -->
+
+	<script src="phonegap.js"></script>
+	<script src="js/libs/zepto.min.js"></script>
+	<script src="js/libs/handlebars.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+		App.initialize();
+	</script>
+</body>
+</html>
