@@ -31,7 +31,16 @@
 		</article>
 	</section>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script>if (!window.jQuery) document.write = '<script src="js/jquery.1.9.1.js"></script>' </script>
-	<script src="js/_main.js"></script>
+	<script>
+	(function($){
+		window.scrollTo(0,1);
+
+		var width = $(window).width(),
+			height = $(window).height();
+
+		$("header, section").css('height', height);
+
+	}(jQuery));
+	</script>
 </body>
 </html>
