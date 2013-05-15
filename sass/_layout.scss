@@ -15,17 +15,24 @@ header {
 	background: $themeColor;
 	line-height: 60px;
 	color: #FFFFFF;
-	.icon-header {
+	img {
+		margin: 14px 5px 0 0;
 		float: left;
-		margin-right: 5px;
 	}
+}
+
+.title-result {
+	display: block;
+	font-size: 18px;
+	text-align: center;
+	text-transform: uppercase;
 }
 
 /* SECTIONS */
 section {
 	position: absolute;
 	width: 100%;
-	height: calc(100% - 120px);
+	height: calc(100% - 60px);
 	padding-bottom: 60px;
 	overflow-y: scroll;
 	background: #FFF;
@@ -38,8 +45,7 @@ section {
 }
 
 .load-hide {
-	z-index: -1;
-	width: 0;
+	display: none;
 }
 
 //SELECT
