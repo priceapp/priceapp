@@ -2,7 +2,6 @@
 <widget xmlns		= "http://www.w3.org/ns/widgets"
 		xmlns:gap	= "http://phonegap.com/ns/1.0"
 		id			= "org.priceapp.priceapp"
-		versionCode = "11"
 		version		= "1.0.1">
 
 	<name>PriceApp</name>
@@ -11,7 +10,7 @@
 		Calc price items
 	</description>
 
-	<author email="priceapp.open@gmail.com">
+	<author href="http://priceapp.github.io/priceapp" email="priceapp.open@gmail.com">
 		PriceApp Team
 	</author>
 
